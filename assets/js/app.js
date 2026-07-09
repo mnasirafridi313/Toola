@@ -2,12 +2,15 @@
 // Toola v0.2 JavaScript
 // ==============================
 
-const menuButton=document.getElementById("menuButton");
-const navigation=document.getElementById("navigation");
-const search=document.getElementById("search");
-const darkModeButton=document.getElementById("darkModeButton");
+const menuButton = document.getElementById("menuButton");
+const navigation = document.getElementById("navigation");
+const search = document.getElementById("search");
+const darkModeButton = document.getElementById("darkModeButton");
+const calculateAge = document.getElementById("calculateAge");
+const copyAge = document.getElementById("copyAge");
 
-if(menuButton&&navigation){
+// Mobile Menu
+if(menuButton && navigation){
 
 menuButton.addEventListener("click",function(){
 
@@ -26,6 +29,7 @@ navigation.style.flexDirection="column";
 
 }
 
+// Live Search
 if(search){
 
 search.addEventListener("keyup",function(){
@@ -34,7 +38,7 @@ const value=search.value.toLowerCase();
 
 document.querySelectorAll(".card").forEach(function(card){
 
-card.style.display=card.innerText.toLowerCase().includes(value)?"block":"none";
+card.style.display=card.innerText.toLowerCase().includes(value) ? "" : "none";
 
 });
 
@@ -42,6 +46,7 @@ card.style.display=card.innerText.toLowerCase().includes(value)?"block":"none";
 
 }
 
+// Dark Mode
 if(darkModeButton){
 
 if(localStorage.getItem("theme")==="dark"){
@@ -71,31 +76,41 @@ darkModeButton.textContent="🌙";
 
 }
 
-const calculateAge=document.getElementById("calculateAge");
-
+// Age Calculator
 if(calculateAge){
 
 calculateAge.addEventListener("click",function(){
 
-const input=document.getElementById("birthDate").value;
-
+const birthInput=document.getElementById("birthDate");
 const result=document.getElementById("ageResult");
 
-if(input===""){
+if(!birthInput || !result){
 
-result.innerHTML="Please select your birth date.";
-
+alert("Age Calculator HTML is missing.");
 return;
 
 }
 
-const birth=new Date(input);
+if(birthInput.value===""){
+
+result.innerHTML="Please select your birth date.";
+return;
+
+}
+
+const birth=new Date(birthInput.value);
 const today=new Date();
+
+if(isNaN(birth.getTime())){
+
+result.innerHTML="Invalid date.";
+return;
+
+}
 
 if(birth>today){
 
 result.innerHTML="Birth date cannot be in the future.";
-
 return;
 
 }
@@ -108,35 +123,36 @@ if(days<0){
 
 months--;
 
-days+=new Date(today.getFullYear(),today.getMonth(),0).getDate();
+const lastMonth=new Date(today.getFullYear(),today.getMonth(),0);
+days+=lastMonth.getDate();
 
 }
 
 if(months<0){
 
 years--;
-
 months+=12;
 
 }
 
-result.innerHTML="Your Age: <strong>"+years+"</strong> Years <strong>"+months+"</strong> Months <strong>"+days+"</strong> Days";
+result.innerHTML="<strong>Your Age</strong><br><br>"+years+" Years<br>"+months+" Months<br>"+days+" Days";
 
 });
 
 }
 
-const copyAge=document.getElementById("copyAge");
-
+// Copy Result
 if(copyAge){
 
 copyAge.addEventListener("click",function(){
 
-const text=document.getElementById("ageResult").innerText;
+const result=document.getElementById("ageResult").innerText;
 
-navigator.clipboard.writeText(text);
+if(result==="") return;
 
-copyAge.textContent="Copied!";
+navigator.clipboard.writeText(result);
+
+copyAge.textContent="Copied ✓";
 
 setTimeout(function(){
 
@@ -146,4 +162,4 @@ copyAge.textContent="Copy Result";
 
 });
 
-  }
+}
