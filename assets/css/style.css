@@ -274,5 +274,12 @@ background:#0057ff;
 }
 
 }
+const menuButton = document.getElementById("menuButton");
+
+menuButton.addEventListener("click", function(){
+
+alert("Mobile menu coming in the next update!");
+
+});
 
 
