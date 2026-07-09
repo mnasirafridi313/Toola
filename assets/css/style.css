@@ -392,3 +392,32 @@ scroll-behavior:smooth;
 button{
 transition:all .3s ease;
   }
+#darkModeButton{
+background:#ffffff;
+color:#0057ff;
+border:none;
+width:46px;
+height:46px;
+border-radius:12px;
+font-size:22px;
+margin-left:10px;
+box-shadow:var(--shadow);
+}
+
+.darkMode{
+background:#111827;
+color:#f3f4f6;
+}
+
+.darkMode .card,
+.darkMode .stat,
+.darkMode .searchBox,
+.darkMode .quickTools button{
+background:#1f2937;
+color:#ffffff;
+}
+
+.darkMode input{
+color:#ffffff;
+background:transparent;
+}
