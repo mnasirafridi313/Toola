@@ -1,148 +1,65 @@
-const menuButton=document.getElementById("menuButton");
-const navigation=document.getElementById("navigation");
-const search=document.getElementById("search");
+const menuButton = document.getElementById("menuButton");
+const navigation = document.getElementById("navigation");
+const search = document.getElementById("search");
+const darkModeButton = document.getElementById("darkModeButton");
 
-if(menuButton){
+// Mobile Menu
+if (menuButton && navigation) {
 
-menuButton.onclick=function(){
+menuButton.addEventListener("click", function () {
 
-if(navigation.style.display==="flex"){
+if (navigation.style.display === "flex") {
 
-navigation.style.display="none";
+navigation.style.display = "none";
 
-}else{
+} else {
 
-navigation.style.display="flex";
-
-navigation.style.flexDirection="column";
-
-}
-
-};
+navigation.style.display = "flex";
+navigation.style.flexDirection = "column";
 
 }
 
-if(search){
+});
 
-search.addEventListener("keyup",function(){
+}
 
-const value=search.value.toLowerCase();
+// Live Search
+if (search) {
 
-const cards=document.querySelectorAll(".card");
+search.addEventListener("keyup", function () {
 
-cards.forEach(function(card){
+const value = search.value.toLowerCase();
 
-card.style.display=card.innerText.toLowerCase().includes(value)?"block":"none";
+const cards = document.querySelectorAll(".card");
+
+cards.forEach(function (card) {
+
+if (card.innerText.toLowerCase().includes(value)) {
+
+card.style.display = "";
+
+} else {
+
+card.style.display = "none";
+
+}
 
 });
 
 });
 
 }
-const darkModeButton=document.getElementById("darkModeButton");
 
-if(darkModeButton){
+// Dark Mode
+if (darkModeButton) {
 
-darkModeButton.onclick=function(){
+darkModeButton.addEventListener("click", function () {
 
 document.body.classList.toggle("darkMode");
 
-if(document.body.classList.contains("darkMode")){
+darkModeButton.textContent =
+document.body.classList.contains("darkMode") ? "☀" : "🌙";
 
-darkModeButton.innerHTML="☀";
-
-}else{
-
-darkModeButton.innerHTML="🌙";
+});
 
 }
-
-};
-
-}
-// Age Calculator Function
-
-const calculateAge = document.getElementById("calculateAge");
-
-if(calculateAge){
-
-calculateAge.onclick = function(){
-
-let birthDate = new Date(document.getElementById("birthDate").value);
-
-let today = new Date();
-
-let years = today.getFullYear() - birthDate.getFullYear();
-
-let months = today.getMonth() - birthDate.getMonth();
-
-let days = today.getDate() - birthDate.getDate();
-
-
-if(days < 0){
-
-months--;
-
-days += new Date(today.getFullYear(), today.getMonth(), 0).getDate();
-
-}
-
-
-if(months < 0){
-
-years--;
-
-months += 12;
-
-}
-
-
-document.getElementById("ageResult").innerHTML =
-"Your Age: " + years + " Years, " + months + " Months, " + days + " Days";
-
-};
-
-   }
-// Age Calculator Function
-
-const calculateAge = document.getElementById("calculateAge");
-
-if(calculateAge){
-
-calculateAge.onclick = function(){
-
-let birthDate = new Date(document.getElementById("birthDate").value);
-
-let today = new Date();
-
-let years = today.getFullYear() - birthDate.getFullYear();
-
-let months = today.getMonth() - birthDate.getMonth();
-
-let days = today.getDate() - birthDate.getDate();
-
-
-if(days < 0){
-
-months--;
-
-days += new Date(today.getFullYear(), today.getMonth(), 0).getDate();
-
-}
-
-
-if(months < 0){
-
-years--;
-
-months += 12;
-
-}
-
-
-document.getElementById("ageResult").innerHTML =
-"Your Age: " + years + " Years, " + months + " Months, " + days + " Days";
-
-};
-
-   }
