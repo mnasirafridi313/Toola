@@ -167,3 +167,54 @@ font-size:28px;
 }
 
   }
+
+#search{
+
+background:#fff;
+
+border:2px solid transparent;
+
+transition:.3s;
+
+}
+
+#search:focus{
+
+border-color:#0057ff;
+
+box-shadow:0 0 20px rgba(0,87,255,.25);
+
+}
+
+button{
+
+transition:.3s;
+
+}
+
+button:hover{
+
+transform:scale(1.05);
+
+}
+
+.card{
+
+overflow:hidden;
+
+}
+
+.card::before{
+
+content:"";
+
+display:block;
+
+height:5px;
+
+background:linear-gradient(90deg,#0057ff,#42a5ff);
+
+margin:-25px -25px 20px;
+
+  }
+
