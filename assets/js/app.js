@@ -39,3 +39,24 @@ card.style.display=card.innerText.toLowerCase().includes(value)?"block":"none";
 });
 
 }
+const darkModeButton=document.getElementById("darkModeButton");
+
+if(darkModeButton){
+
+darkModeButton.onclick=function(){
+
+document.body.classList.toggle("darkMode");
+
+if(document.body.classList.contains("darkMode")){
+
+darkModeButton.innerHTML="☀";
+
+}else{
+
+darkModeButton.innerHTML="🌙";
+
+}
+
+};
+
+}
