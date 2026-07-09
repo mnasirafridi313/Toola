@@ -9,9 +9,9 @@
 
 <meta name="theme-color" content="#0057ff">
 
-<meta name="description" content="Toola is a lightweight platform with calculators converters utilities puzzle games and smart daily tools.">
+<meta name="description" content="Toola | One Platform. Every Tool.">
 
-<meta name="keywords" content="Toola, Calculator, Converter, Utility, QR Code, Password Generator, Age Calculator">
+<meta name="keywords" content="Toola, Calculator, Converter, QR Code, Password Generator, BMI, Age Calculator">
 
 <meta name="author" content="M Nasir Afridi">
 
@@ -39,14 +39,13 @@
 
 </div>
 
-<button id="menuButton">
+<div class="headerButtons">
 
-☰
+<button id="darkModeButton" type="button">🌙</button>
 
-</button>
-  <button id="darkModeButton">
-🌙
-  </button>
+<button id="menuButton" type="button">☰</button>
+
+</div>
 
 <nav id="navigation">
 
@@ -70,57 +69,35 @@
 
 <div class="heroContent">
 
-<h1>
+<h1>Every Tool You Need</h1>
 
-Every Tool You Need
-
-</h1>
-
-<p>
-
-Fast
-
-Free
-
-Simple
-
-Made for everyone.
-
-</p>
+<p>Fast Free Simple Made for Everyone.</p>
 
 <div class="searchBox">
 
 <input
-
 type="search"
-
 id="search"
-
-placeholder="Search And Surprised yourself..."
-
+placeholder="Search calculators converters QR password generator..."
 >
 
-<button>
-
-🔍
-
-</button>
+<button type="button">🔍</button>
 
 </div>
 
 <div class="quickTools">
 
-<button>Age</button>
+<button type="button">Age</button>
 
-<button>BMI</button>
+<button type="button">BMI</button>
 
-<button>Currency</button>
+<button type="button">Currency</button>
 
-<button>Password</button>
+<button type="button">Password</button>
 
-<button>QR Code</button>
+<button type="button">QR Code</button>
 
-<button>More</button>
+<button type="button">More</button>
 
 </div>
 
@@ -158,104 +135,72 @@ placeholder="Search And Surprised yourself..."
 
 <section class="featured">
 
-<h2>
-
-Featured Tools
-
-</h2>
+<h2>Featured Tools</h2>
 
 <div class="grid">
 
 <div class="card">
 
-<h3>
+<h3>Age Calculator</h3>
 
-Age Calculator
+<p>Calculate your exact age instantly.</p>
 
-</h3>
-
-<p>
-
-Calculate exact age instantly.
-
-</p>
-
-<button>
-
-Open Tool
-
-</button>
+<button type="button">Open Tool</button>
 
 </div>
 
 <div class="card">
 
-<h3>
+<h3>BMI Calculator</h3>
 
-BMI Calculator
+<p>Check your body mass index.</p>
 
-</h3>
-
-<p>
-
-Know your health status.
-
-</p>
-
-<button>
-
-Open Tool
-
-</button>
+<button type="button">Open Tool</button>
 
 </div>
 
 <div class="card">
 
-<h3>
+<h3>Currency Converter</h3>
 
-Currency Converter
+<p>Convert world currencies quickly.</p>
 
-</h3>
-
-<p>
-
-Convert world currencies.
-
-</p>
-
-<button>
-
-Open Tool
-
-</button>
+<button type="button">Open Tool</button>
 
 </div>
 
 </div>
 
 </section>
-  <div class="toolCard">
+
+<section class="toolCard">
 
 <h2>Age Calculator</h2>
 
-<p>Calculate your exact age</p>
+<p>Select your birth date.</p>
 
 <input type="date" id="birthDate">
 
-<button id="calculateAge">
+<button id="calculateAge" type="button">
+
 Calculate Age
+
 </button>
 
-<div id="ageResult"></div>
+<div id="ageResult">
 
-<button id="copyAge">
+Your result will appear here.
+
+</div>
+
+<button id="copyAge" type="button">
+
 Copy Result
+
 </button>
 
-  </div>
-
-  <section class="categories">
+</section>
+<section class="categories">
 
 <h2>Browse Categories</h2>
 
@@ -268,27 +213,27 @@ Copy Result
 
 <div class="card">
 <h3>💱 Converters</h3>
-<p>Convert units and currencies.</p>
+<p>Convert currencies and units.</p>
 </div>
 
 <div class="card">
 <h3>📱 Device Tools</h3>
-<p>Android and iPhone utilities.</p>
+<p>Useful Android and iPhone tools.</p>
 </div>
 
 <div class="card">
-<h3>🧩 Puzzle Games</h3>
-<p>Train your brain with fun games.</p>
+<h3>🔐 Security</h3>
+<p>Password and QR code generators.</p>
 </div>
 
 <div class="card">
-<h3>🧠 Logic</h3>
-<p>Improve your thinking skills.</p>
+<h3>🧩 Puzzle</h3>
+<p>Fun games and brain training.</p>
 </div>
 
 <div class="card">
-<h3>⚙ More Tools</h3>
-<p>Hundreds of tools coming soon.</p>
+<h3>⚙ More</h3>
+<p>Many more tools coming soon.</p>
 </div>
 
 </div>
@@ -297,23 +242,32 @@ Copy Result
 
 <section class="whyToola">
 
-<h2>Why Toola?</h2>
+<h2>Why Choose Toola?</h2>
 
 <div class="grid">
 
 <div class="card">
+
 <h3>⚡ Fast</h3>
-<p>Loads quickly with lightweight code.</p>
+
+<p>Built with lightweight HTML CSS and JavaScript.</p>
+
 </div>
 
 <div class="card">
+
 <h3>🔒 Secure</h3>
-<p>Your data stays on your device whenever possible.</p>
+
+<p>Your information stays private on your device whenever possible.</p>
+
 </div>
 
 <div class="card">
+
 <h3>🌍 Free</h3>
-<p>Most tools are completely free to use.</p>
+
+<p>Most Toola utilities are completely free to use.</p>
+
 </div>
 
 </div>
@@ -332,7 +286,9 @@ Copy Result
 
 <div class="footerLinks">
 
-<a href="#">About</a>
+<a href="#">Home</a>
+
+<a href="#">Tools</a>
 
 <a href="#">Privacy</a>
 
@@ -354,4 +310,4 @@ Copy Result
 
 </body>
 
-                   </html>
+  </html>
