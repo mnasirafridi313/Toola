@@ -274,12 +274,27 @@ background:#0057ff;
 }
 
 }
-const menuButton = document.getElementById("menuButton");
+const menuButton=document.getElementById("menuButton");
 
-menuButton.addEventListener("click", function(){
+const nav=document.querySelector("nav");
 
-alert("Mobile menu coming in the next update!");
+menuButton.addEventListener("click",function(){
+
+if(nav.style.display==="flex"){
+
+nav.style.display="none";
+
+}else{
+
+nav.style.display="flex";
+
+nav.style.flexDirection="column";
+
+nav.style.gap="15px";
+
+nav.style.padding="20px";
+
+}
 
 });
-
 
