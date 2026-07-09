@@ -297,4 +297,32 @@ nav.style.padding="20px";
 }
 
 });
+.logo{
+display:flex;
+align-items:center;
+gap:10px;
+font-size:30px;
+font-weight:800;
+}
+
+.logoBlue{
+display:flex;
+justify-content:center;
+align-items:center;
+width:42px;
+height:42px;
+border-radius:12px;
+background:white;
+color:#0057ff;
+font-size:28px;
+font-weight:bold;
+}
+
+.version{
+font-size:11px;
+background:rgba(255,255,255,.2);
+padding:4px 8px;
+border-radius:20px;
+color:white;
+  }
 
