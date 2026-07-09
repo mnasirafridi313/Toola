@@ -243,3 +243,36 @@ transition:.3s;
 transform:translateY(-4px);
 box-shadow:0 14px 30px rgba(0,87,255,.35);
 }
+
+.mobileMenu{
+display:none;
+}
+
+#menuButton{
+background:#ffffff;
+color:#0057ff;
+border:none;
+padding:10px 14px;
+border-radius:12px;
+font-size:22px;
+font-weight:bold;
+cursor:pointer;
+box-shadow:0 8px 20px rgba(0,0,0,.15);
+}
+
+@media(max-width:768px){
+
+nav{
+display:none;
+}
+
+.mobileMenu{
+display:flex;
+justify-content:flex-end;
+padding:12px 20px;
+background:#0057ff;
+}
+
+}
+
+
