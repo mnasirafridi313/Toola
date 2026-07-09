@@ -1,21 +1,24 @@
-const menuButton = document.getElementById("menuButton");
-const navigation = document.getElementById("navigation");
-const search = document.getElementById("search");
-const darkModeButton = document.getElementById("darkModeButton");
+// ==============================
+// Toola v0.2 JavaScript
+// ==============================
 
-// Mobile Menu
-if (menuButton && navigation) {
+const menuButton=document.getElementById("menuButton");
+const navigation=document.getElementById("navigation");
+const search=document.getElementById("search");
+const darkModeButton=document.getElementById("darkModeButton");
 
-menuButton.addEventListener("click", function () {
+if(menuButton&&navigation){
 
-if (navigation.style.display === "flex") {
+menuButton.addEventListener("click",function(){
 
-navigation.style.display = "none";
+if(navigation.style.display==="flex"){
 
-} else {
+navigation.style.display="none";
 
-navigation.style.display = "flex";
-navigation.style.flexDirection = "column";
+}else{
+
+navigation.style.display="flex";
+navigation.style.flexDirection="column";
 
 }
 
@@ -23,26 +26,15 @@ navigation.style.flexDirection = "column";
 
 }
 
-// Live Search
-if (search) {
+if(search){
 
-search.addEventListener("keyup", function () {
+search.addEventListener("keyup",function(){
 
-const value = search.value.toLowerCase();
+const value=search.value.toLowerCase();
 
-const cards = document.querySelectorAll(".card");
+document.querySelectorAll(".card").forEach(function(card){
 
-cards.forEach(function (card) {
-
-if (card.innerText.toLowerCase().includes(value)) {
-
-card.style.display = "";
-
-} else {
-
-card.style.display = "none";
-
-}
+card.style.display=card.innerText.toLowerCase().includes(value)?"block":"none";
 
 });
 
@@ -50,16 +42,108 @@ card.style.display = "none";
 
 }
 
-// Dark Mode
-if (darkModeButton) {
+if(darkModeButton){
 
-darkModeButton.addEventListener("click", function () {
+if(localStorage.getItem("theme")==="dark"){
+
+document.body.classList.add("darkMode");
+darkModeButton.textContent="☀";
+
+}
+
+darkModeButton.addEventListener("click",function(){
 
 document.body.classList.toggle("darkMode");
 
-darkModeButton.textContent =
-document.body.classList.contains("darkMode") ? "☀" : "🌙";
+if(document.body.classList.contains("darkMode")){
+
+localStorage.setItem("theme","dark");
+darkModeButton.textContent="☀";
+
+}else{
+
+localStorage.setItem("theme","light");
+darkModeButton.textContent="🌙";
+
+}
 
 });
 
 }
+
+const calculateAge=document.getElementById("calculateAge");
+
+if(calculateAge){
+
+calculateAge.addEventListener("click",function(){
+
+const input=document.getElementById("birthDate").value;
+
+const result=document.getElementById("ageResult");
+
+if(input===""){
+
+result.innerHTML="Please select your birth date.";
+
+return;
+
+}
+
+const birth=new Date(input);
+const today=new Date();
+
+if(birth>today){
+
+result.innerHTML="Birth date cannot be in the future.";
+
+return;
+
+}
+
+let years=today.getFullYear()-birth.getFullYear();
+let months=today.getMonth()-birth.getMonth();
+let days=today.getDate()-birth.getDate();
+
+if(days<0){
+
+months--;
+
+days+=new Date(today.getFullYear(),today.getMonth(),0).getDate();
+
+}
+
+if(months<0){
+
+years--;
+
+months+=12;
+
+}
+
+result.innerHTML="Your Age: <strong>"+years+"</strong> Years <strong>"+months+"</strong> Months <strong>"+days+"</strong> Days";
+
+});
+
+}
+
+const copyAge=document.getElementById("copyAge");
+
+if(copyAge){
+
+copyAge.addEventListener("click",function(){
+
+const text=document.getElementById("ageResult").innerText;
+
+navigator.clipboard.writeText(text);
+
+copyAge.textContent="Copied!";
+
+setTimeout(function(){
+
+copyAge.textContent="Copy Result";
+
+},2000);
+
+});
+
+  }
