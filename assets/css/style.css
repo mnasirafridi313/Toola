@@ -218,3 +218,28 @@ margin:-25px -25px 20px;
 
   }
 
+.quickTools{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:12px;
+margin-top:30px;
+}
+
+.quickTools button{
+background:linear-gradient(135deg,#0057ff,#3d8bff);
+color:#fff;
+border:none;
+padding:12px 18px;
+border-radius:30px;
+font-size:15px;
+font-weight:600;
+cursor:pointer;
+box-shadow:0 8px 20px rgba(0,87,255,.25);
+transition:.3s;
+}
+
+.quickTools button:hover{
+transform:translateY(-4px);
+box-shadow:0 14px 30px rgba(0,87,255,.35);
+}
