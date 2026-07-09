@@ -395,3 +395,33 @@ border-radius:10px;
 cursor:pointer;
 font-weight:bold;
 }
+.whyToola{
+padding:60px 20px;
+max-width:1200px;
+margin:auto;
+}
+
+.whyToola h2{
+text-align:center;
+margin-bottom:30px;
+color:#0057ff;
+}
+
+.whyGrid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:20px;
+}
+
+.whyCard{
+background:#fff;
+padding:25px;
+border-radius:18px;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+transition:.3s;
+text-align:center;
+}
+
+.whyCard:hover{
+transform:translateY(-8px);
+}
