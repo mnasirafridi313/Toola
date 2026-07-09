@@ -421,3 +421,44 @@ color:#ffffff;
 color:#ffffff;
 background:transparent;
 }
+/* Age Calculator */
+
+.toolCard{
+background:#ffffff;
+padding:25px;
+margin:30px auto;
+max-width:500px;
+border-radius:20px;
+box-shadow:var(--shadow);
+text-align:center;
+}
+
+.toolCard h2{
+color:#0057ff;
+}
+
+.toolCard input{
+width:90%;
+padding:12px;
+margin:15px 0;
+border-radius:10px;
+border:1px solid #ddd;
+font-size:16px;
+}
+
+.toolCard button{
+background:#0057ff;
+color:white;
+border:none;
+padding:12px 20px;
+border-radius:10px;
+cursor:pointer;
+margin:5px;
+font-size:16px;
+}
+
+#ageResult{
+margin:20px 0;
+font-size:18px;
+font-weight:bold;
+}
