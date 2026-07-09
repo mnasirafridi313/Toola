@@ -103,3 +103,46 @@ document.getElementById("ageResult").innerHTML =
 };
 
    }
+// Age Calculator Function
+
+const calculateAge = document.getElementById("calculateAge");
+
+if(calculateAge){
+
+calculateAge.onclick = function(){
+
+let birthDate = new Date(document.getElementById("birthDate").value);
+
+let today = new Date();
+
+let years = today.getFullYear() - birthDate.getFullYear();
+
+let months = today.getMonth() - birthDate.getMonth();
+
+let days = today.getDate() - birthDate.getDate();
+
+
+if(days < 0){
+
+months--;
+
+days += new Date(today.getFullYear(), today.getMonth(), 0).getDate();
+
+}
+
+
+if(months < 0){
+
+years--;
+
+months += 12;
+
+}
+
+
+document.getElementById("ageResult").innerHTML =
+"Your Age: " + years + " Years, " + months + " Months, " + days + " Days";
+
+};
+
+   }
